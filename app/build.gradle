@@ -39,10 +39,10 @@ android {
     }
 
     signingConfigs {
-        sankuai {
-            storeFile file("keystore/meituan-debug.keystore")
+        sign {
+            storeFile file("keystore/sign-debug.keystore")
             storePassword "1234567"
-            keyAlias "meituan"
+            keyAlias "debug"
             keyPassword "12345678"
         }
     }
@@ -52,14 +52,14 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.sankuai
+            signingConfig signingConfigs.sign
         }
 
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            signingConfig signingConfigs.sankuai
+            signingConfig signingConfigs.sign
 
             applicationIdSuffix 'debug'
         }
