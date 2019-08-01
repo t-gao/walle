@@ -40,7 +40,7 @@ android {
 
     signingConfigs {
         sign {
-            storeFile file("keystore/sign-debug.keystore")
+            storeFile file("keystore/keystore")
             storePassword "1234567"
             keyAlias "debug"
             keyPassword "12345678"
