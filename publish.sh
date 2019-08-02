@@ -11,12 +11,14 @@ for file in $(find . -name 'README.md'); do
  sed -i.bak -e "s/\(['\"]\)\(${GROUP_STRING}\):\(.*\):.*\(['\"]\)/\1\2:\3:${VERSION_STRING}\4/g" ${file}
  rm ${file}.bak
 done
-# 提交
-git add .
-git commit -m "update cli.jar & readme"
-git push origin HEAD
-# upload jar & aar
-./gradlew clean bintrayUpload -x :app:clean
+
+######
+## 提交
+# git add .
+# git commit -m "update cli.jar & readme"
+# git push origin HEAD
+## upload jar & aar
+# ./gradlew clean bintrayUpload -x :app:clean
 # git tag
-git tag v$VERSION_STRING
-git push origin v$VERSION_STRING
+# git tag v$VERSION_STRING
+# git push origin v$VERSION_STRING
